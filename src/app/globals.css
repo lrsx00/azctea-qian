@@ -23,6 +23,103 @@
   --input: 144 12% 22%;
   --ring: 146 31% 44%;
   --radius: 12px;
+  --sidebar-background: 144 20% 10%;
+}
+
+.dark {
+  --background: 144 26% 7%;
+  --foreground: 144 24% 95%;
+  --card: 144 20% 10%;
+  --card-foreground: 144 24% 95%;
+  --popover: 144 20% 10%;
+  --popover-foreground: 144 24% 95%;
+  --primary: 146 31% 44%;
+  --primary-foreground: 144 27% 98%;
+  --secondary: 148 18% 18%;
+  --secondary-foreground: 144 24% 95%;
+  --muted: 144 14% 18%;
+  --muted-foreground: 144 12% 75%;
+  --accent: 39 78% 56%;
+  --accent-foreground: 144 24% 10%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 144 12% 22%;
+  --input: 144 12% 22%;
+  --ring: 146 31% 44%;
+  --radius: 12px;
+  --sidebar-background: 144 20% 10%;
+}
+
+.light {
+  --background: 144 24% 98%;
+  --foreground: 144 26% 7%;
+  --card: 0 0% 100%;
+  --card-foreground: 144 26% 7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 144 26% 7%;
+  --primary: 146 31% 44%;
+  --primary-foreground: 144 27% 98%;
+  --secondary: 144 20% 90%;
+  --secondary-foreground: 144 26% 7%;
+  --muted: 144 14% 90%;
+  --muted-foreground: 144 12% 25%;
+  --accent: 39 78% 56%;
+  --accent-foreground: 144 24% 10%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 144 12% 85%;
+  --input: 144 12% 85%;
+  --ring: 146 31% 44%;
+  --radius: 12px;
+  --sidebar-background: 0 0% 100%;
+}
+
+.social {
+  --background: 210 40% 96.1%;
+  --foreground: 222.2 47.4% 11.2%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+  --sidebar-background: 0 0% 100%;
+}
+
+.vibrant {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 346.8 77.2% 49.8%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 346.8 77.2% 49.8%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 346.8 77.2% 49.8%;
+  --radius: 1.5rem;
+  --sidebar-background: 0 0% 99%;
 }
 
 body {
@@ -30,9 +127,37 @@ body {
   color: hsl(var(--foreground));
   font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
     sans-serif;
+  min-height: 100vh;
+}
+
+/* 主题特定的背景效果 */
+.dark body {
+  background-color: rgb(2 6 23);
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(16, 185, 129, 0.3), rgba(255, 255, 255, 0));
+}
+
+.light body {
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(16, 185, 129, 0.1), rgba(255, 255, 255, 0));
+}
+
+.social body {
+  background-color: hsl(var(--background));
+}
+
+.vibrant body {
+  background-color: hsl(var(--background));
 }
 
 ::selection {
   background: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
+}
+
+/* Vibrant 主题渐变按钮支持 */
+.vibrant .bg-primary {
+  background: linear-gradient(135deg, hsl(346.8 77.2% 49.8%), hsl(25 95% 53%));
+}
+
+.vibrant .bg-primary:hover {
+  background: linear-gradient(135deg, hsl(346.8 77.2% 45%), hsl(25 95% 48%));
 }
