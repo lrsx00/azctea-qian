@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 144 26% 7%;
+  --foreground: 144 24% 95%;
+  --card: 144 20% 10%;
+  --card-foreground: 144 24% 95%;
+  --popover: 144 20% 10%;
+  --popover-foreground: 144 24% 95%;
+  --primary: 146 31% 44%;
+  --primary-foreground: 144 27% 98%;
+  --secondary: 148 18% 18%;
+  --secondary-foreground: 144 24% 95%;
+  --muted: 144 14% 18%;
+  --muted-foreground: 144 12% 75%;
+  --accent: 39 78% 56%;
+  --accent-foreground: 144 24% 10%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 144 12% 22%;
+  --input: 144 12% 22%;
+  --ring: 146 31% 44%;
+  --radius: 12px;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+}
+
+::selection {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
